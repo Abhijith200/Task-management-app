@@ -14,8 +14,8 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const MOCK_USER: User = {
   id: '1',
-  email: 'user@example.com',
-  name: 'Vibe Coder',
+  email: '',
+  name: '',
   avatar: 'https://github.com/nutlope.png', // Default avatar
 };
 
@@ -55,7 +55,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = async (email: string, password: string): Promise<boolean> => {
     // Simple mock auth
     if (email && password) {
-      const user = { ...MOCK_USER, email };
+      const name = email.split('@')[0];
+      const user = { ...MOCK_USER, email, name };
       localStorage.setItem('auth_user', JSON.stringify(user));
       setState({
         user,

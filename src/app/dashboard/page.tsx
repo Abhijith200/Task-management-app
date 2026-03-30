@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTasks } from '@/hooks/useTasks';
+import { Task } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   CheckCircle2, 
@@ -29,28 +30,28 @@ export default function DashboardPage() {
     },
     {
       title: 'Completed',
-      value: tasks.filter(t => t.status === 'completed').length,
+      value: tasks.filter((t: Task) => t.status === 'completed').length,
       icon: CheckCircle2,
       color: 'text-green-500',
       bgColor: 'bg-green-500/10',
     },
     {
       title: 'In Progress',
-      value: tasks.filter(t => t.status === 'in-progress').length,
+      value: tasks.filter((t: Task) => t.status === 'in-progress').length,
       icon: Clock,
       color: 'text-amber-500',
       bgColor: 'bg-amber-500/10',
     },
     {
       title: 'Pending',
-      value: tasks.filter(t => t.status === 'todo').length,
+      value: tasks.filter((t: Task) => t.status === 'todo').length,
       icon: Circle,
       color: 'text-slate-500',
       bgColor: 'bg-slate-500/10',
     }
   ];
 
-  const recentTasks = [...tasks].sort((a, b) => 
+  const recentTasks = [...tasks].sort((a: Task, b: Task) => 
     new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
   ).slice(0, 5);
 
