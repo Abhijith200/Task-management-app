@@ -66,11 +66,11 @@ simple-todo/
 
 ## 🎨 Design Decisions
 
-- **Tailwind CSS v4**: Utilized the latest Tailwind architecture for a streamlined, configuration-less theme system using `@theme` in CSS.
+- **Tailwind CSS v4**: Utilised the latest Tailwind architecture for a streamlined, configuration-less theme system using `@theme` in CSS.
 - **shadcn/ui**: Leveraged high-quality, accessible components for a consistent design language.
 - **Glassmorphism**: Applied subtle backdrop-blurs and thin borders (`ring-1`) for a modern, layered appearance.
 - **Protection Layer**: Implemented a `ProtectedRoute` component that handles all auth logic in one place, ensuring a secure-by-default dashboard experience.
-- **Local Persistence**: Chose `localStorage` for the mock environment to ensure user data survives page refreshes without needing a backend.
+- **Local Persistence**: Choose `localStorage` for the mock environment to ensure user data survives page refreshes without needing a backend.
 
 ## 🧪 Testing
 
